@@ -22,8 +22,9 @@ First, clone or download the repository.
   </code>
 </pre>
 
-Second, run the bash script (which runs all images with the extension .jpg)
+Unzip the file and open up the terminal and go to the directory. 
 
+Add image files and run the bash script (which runs all images with the extension .jpg)
 
 
 <pre>
