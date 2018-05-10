@@ -7,7 +7,7 @@ The main packages used are opencv (computer vision for processing images) and py
 
 <pre>
   <code>
-  pip install opencv 
+  pip install opencv-python
   pip install pytesseract
   </code>
 </pre>
