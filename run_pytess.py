@@ -1,7 +1,9 @@
 from PIL import Image
 import sys 
+from io import StringIO
 import cv2
 import pytesseract 
+import pandas as pd
 
 # Get the image from command line
 image_name = sys.argv[1]
