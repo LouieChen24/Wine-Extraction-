@@ -47,12 +47,11 @@ for number in data[11]:
 
 if count_floats > 3:
     print("True")
-    names = []
-    bottle = []
-    case = []
+    wine_data = []
     itr = 0
     for key,value in dict.items():
         wine_name = ""
+        wine_info = {}
         arr = build_array(value)
         x = data.loc[data[7].isin(arr)]
         # Sort by left margin
@@ -60,17 +59,20 @@ if count_floats > 3:
         print(x)
         priced = False
         for te in x[11]:
-             break
              if type(te) is str:
                  if (isfloat(te)) and not te.isdigit():
-                     if len(bottle) == itr + 1:
-                         case.append(te)
+                     if 'bottle' in wine_info:
+                         wine_info['case'] = te
                      else:
-                         bottle.append(te)
+                         wine_info['bottle'] = te
                          priced  = True
                  elif not priced:
                      wine_name = wine_name + te + " "
-        names.append(wine_name)
+                     wine_name = wine_name.replace('.', '')
+                     wine_info['name'] = wine_name
+        wine_data.append(wine_info)
 else:
     print("FALSE")
 
+data_results = pd.DataFrame(wine_data)
+print(data_results)
